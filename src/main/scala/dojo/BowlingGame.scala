@@ -9,11 +9,11 @@ abstract class Frame(val first: Int, val second: Int) {
 object Frame {
   def charToInt(c: Char): Int = c match {
     case '-' => 0
-    case c => Integer.valueOf(c.toString)
+    case c => Integer.valueOf(c.toString).intValue
   }
 }
 
-case class Strike extends Frame(10, 0) {
+case class Strike() extends Frame(10, 0) {
   override def score: Int = 10
 }
 object Spare {
